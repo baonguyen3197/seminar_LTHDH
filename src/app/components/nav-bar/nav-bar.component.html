@@ -1,0 +1,32 @@
+<nav>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button
+        routerLink="home"
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon">
+        <mat-icon>home</mat-icon>
+      </button>
+      <span>DISK SCHEDULING</span>
+      <span class="example-spacer"></span>
+      <button mat-button [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" class="matItem">
+        <button mat-menu-item routerLink="fcfs">FCFS</button>
+        <button mat-menu-item routerLink="sstf">SSTF</button>
+        <button mat-menu-item [matMenuTriggerFor]="scan">SCAN</button>
+        <button mat-menu-item [matMenuTriggerFor]="c_scan">C-SCAN</button>
+      </mat-menu>
+      <mat-menu #scan="matMenu" class="matItem">
+        <button mat-menu-item routerLink="scan-up">SCAN-UP</button>
+        <button mat-menu-item routerLink="scan-down">SCAN-DOWN</button>
+      </mat-menu>
+      <mat-menu #c_scan="matMenu" class="matItem">
+        <button mat-menu-item routerLink="c-scan-up">C-SCAN-UP</button>
+        <button mat-menu-item routerLink="c-scan-down">C-SCAN-DOWN</button>
+      </mat-menu>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</nav>

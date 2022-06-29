@@ -1,0 +1,39 @@
+<div>
+  <h1>C-SCAN-UP</h1>
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Size</mat-label>
+      <input matInput placeholder="(0-199)" [(ngModel)]="size" [ngModelOptions]="{standalone: true}"/>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Head</mat-label>
+      <input matInput placeholder="(0-199)" [(ngModel)]="head" [ngModelOptions]="{standalone: true}"/>
+    </mat-form-field>
+  </form>
+</div>
+
+<div>
+  <button type="button" (click)="onClick()" mat-raised-button color="primary">
+    RUN
+  </button>
+</div>
+
+<p>
+  Seek sequence is: <br>
+  {{ seek_sequence }} <br>
+  Total number of seek operations: <br> 
+  {{ seek_count }}
+</p>
+
+<div>
+  <canvas
+    id="myCanvas"
+    width="800"
+    height="300"
+    style="border: 2px solid #673ab7"
+  >
+  </canvas>
+  <br />
+  <button (click)="draw()" mat-raised-button color="primary">Draw</button>
+</div>
